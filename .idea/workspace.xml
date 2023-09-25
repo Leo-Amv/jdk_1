@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1dd0048-19cb-4b91-a9da-c57e80e7fc2b" name="Changes" comment="added windows and buttons">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/gb/xo/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/gb/xo/GameWindow.java" afterDir="false" />
+    <list default="true" id="e1dd0048-19cb-4b91-a9da-c57e80e7fc2b" name="Changes" comment="btnStart updated">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/gb/xo/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/gb/xo/Map.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695653478152</updated>
-      <workItem from="1695653479777" duration="5116000" />
+      <workItem from="1695653479777" duration="6436000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1695653614841</created>
@@ -76,7 +77,28 @@
       <option name="project" value="LOCAL" />
       <updated>1695658083610</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added startNewGame method">
+      <created>1695658665756</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695658665756</updated>
+    </task>
+    <task id="LOCAL-00004" summary="gitignore fixed">
+      <created>1695658737524</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695658737524</updated>
+    </task>
+    <task id="LOCAL-00005" summary="btnStart updated">
+      <created>1695658871322</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695658871322</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,6 +107,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="added windows and buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="added windows and buttons" />
+    <MESSAGE value="added startNewGame method" />
+    <MESSAGE value="gitignore fixed" />
+    <MESSAGE value="btnStart updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="btnStart updated" />
   </component>
 </project>
