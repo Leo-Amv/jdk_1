@@ -9,6 +9,18 @@ import java.util.Random;
 public class Map extends JPanel {
     private static final Random RANDOM = new Random();
     private static final int DOT_PADDING = 5;
+
+    private boolean isGameOver;
+    private boolean isInitialized;
+
+    private int gameOverType;
+    private static final int STATE_DRAW = 0;
+    private static final int STATE_WIN_HUMAN = 1;
+    private static final int STATE_WIN_AI = 2;
+
+    private static final String MSG_WIN_HUMAN = "PLAYER WIN!";
+    private static final String MSG_WIN_AI = "AI WIN!";
+    private static final String MSG_DRAW = "DRAW!";
     private final int HUMAN_DOT = 1;
     private final int AI_DOT = 2;
     private final int EMPTY_DOT = 0;
@@ -28,17 +40,43 @@ public class Map extends JPanel {
                 update(e);
             }
         });
+        isInitialized = false;
     }
     private void update(MouseEvent e){
+        if (isGameOver || !isInitialized) return;
         int cellX = e.getX()/cellWidth;
         int cellY = e.getY()/cellHeight;
         if (!isValidCell(cellX,cellY) || !isEmptyCell(cellX,cellY)) return;
         field[cellY][cellX] = HUMAN_DOT;
         repaint();
+
+        if (checkEndGame(HUMAN_DOT, STATE_WIN_HUMAN)) return;
+        aiTurn();
+        repaint();
+        if (checkEndGame(AI_DOT, STATE_WIN_AI)) return;
+    }
+
+    private boolean checkEndGame(int dot,int gameOverType){
+        if (checkWIn(dot)){
+            this.gameOverType = gameOverType;
+            isGameOver = true;
+            repaint();
+            return true;
+        }
+        if (isMapFull()){
+            this.gameOverType = STATE_DRAW;
+            isGameOver = true;
+            repaint();
+            return true;
+        }
+        return false;
     }
 
     void startNewGame(int mode, int fSzX,int fSzY,int wLen){
         System.out.printf("Mode: %d;\nSize: x= %d, y= %d;\nWin Length: %d",mode,fSzX,fSzY,wLen);
+        initMap();
+        isGameOver = false;
+        isInitialized = true;
         repaint();
     }
 
@@ -49,6 +87,7 @@ public class Map extends JPanel {
     }
 
     private void render(Graphics g){
+        if (!isInitialized) return;
         panelWidth = getWidth();
         panelHeight = getHeight();
         cellHeight = panelHeight / 3;
@@ -78,6 +117,27 @@ public class Map extends JPanel {
                     throw new RuntimeException("Unexpected value " + field[y][x] + " in cell: x=" + x + " y=" + y);
                 }
             }
+        }
+        if (isGameOver) showMessageGameOver(g);
+    }
+
+    private void showMessageGameOver(Graphics g){
+        g.setColor(Color.DARK_GRAY);
+        g.fillRect(0,200,getWidth(),70);
+        g.setColor(Color.YELLOW);
+        g.setFont(new Font("Times new roman",Font.BOLD,48));
+        switch (gameOverType){
+            case STATE_DRAW:
+                g.drawString(MSG_DRAW,180, getHeight() / 2);
+                break;
+            case STATE_WIN_AI:
+                g.drawString(MSG_WIN_AI,20,getHeight() / 2);
+                break;
+            case STATE_WIN_HUMAN:
+                g.drawString(MSG_WIN_HUMAN,70,getHeight() / 2);
+                break;
+            default:
+                throw new RuntimeException("Unexpected gameOver state: " + gameOverType);
         }
     }
 
@@ -113,10 +173,20 @@ public class Map extends JPanel {
         field[y][x] = AI_DOT;
     }
 
-    private boolean checkWIn(char c){
+    private boolean checkWIn(int c){
         /**
          * to do win check
          */
+        if (field[0][0]==c && field[0][1]==c && field[0][2]==c) return true;
+        if (field[1][0]==c && field[1][1]==c && field[1][2]==c) return true;
+        if (field[2][0]==c && field[2][1]==c && field[2][2]==c) return true;
+
+        if (field[0][0]==c && field[1][0]==c && field[2][0]==c) return true;
+        if (field[0][1]==c && field[1][1]==c && field[2][1]==c) return true;
+        if (field[0][2]==c && field[1][2]==c && field[2][2]==c) return true;
+
+        if (field[0][0]==c && field[1][1]==c && field[2][2]==c) return true;
+        if (field[0][2]==c && field[1][1]==c && field[2][0]==c) return true;
         return false;
     }
 
