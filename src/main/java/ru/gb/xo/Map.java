@@ -2,6 +2,8 @@ package ru.gb.xo;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Map extends JPanel {
     private int panelWidth;
@@ -9,7 +11,16 @@ public class Map extends JPanel {
     private int cellHeight;
     private int cellWidth;
     Map(){
-        setBackground(Color.DARK_GRAY);
+        setBackground(Color.LIGHT_GRAY);
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                update(e);
+            }
+        });
+    }
+    private void update(MouseEvent e){
+        repaint();
     }
 
     void startNewGame(int mode, int fSzX,int fSzY,int wLen){
