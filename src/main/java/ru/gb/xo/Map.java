@@ -8,6 +8,7 @@ import java.util.Random;
 
 public class Map extends JPanel {
     private static final Random RANDOM = new Random();
+    private static final int DOT_PADDING = 5;
     private final int HUMAN_DOT = 1;
     private final int AI_DOT = 2;
     private final int EMPTY_DOT = 0;
@@ -61,6 +62,22 @@ public class Map extends JPanel {
         for (int w = 0; w < 3; w++) {
             int x = w * cellWidth;
             g.drawLine(x,0,x,panelHeight);
+        }
+
+        for (int y = 0; y < fieldSizeY; y++) {
+            for (int x = 0; x < fieldSizeX; x++) {
+                if (field[y][x] == EMPTY_DOT) continue;
+
+                if (field[y][x] == HUMAN_DOT){
+                    g.setColor(Color.WHITE);
+                    g.fillOval(x * cellWidth + DOT_PADDING, y * cellHeight + DOT_PADDING,cellWidth - DOT_PADDING * 2, cellHeight - DOT_PADDING * 2);
+                } else if (field[y][x] == AI_DOT) {
+                    g.setColor(Color.BLACK);
+                    g.fillOval(x * cellWidth + DOT_PADDING, y * cellHeight + DOT_PADDING,cellWidth - DOT_PADDING * 2, cellHeight - DOT_PADDING * 2);
+                } else {
+                    throw new RuntimeException("Unexpected value " + field[y][x] + " in cell: x=" + x + " y=" + y);
+                }
+            }
         }
     }
 
