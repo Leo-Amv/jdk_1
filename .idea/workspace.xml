@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1dd0048-19cb-4b91-a9da-c57e80e7fc2b" name="Changes" comment="map mouseListener updated">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e1dd0048-19cb-4b91-a9da-c57e80e7fc2b" name="Changes" comment="map game logic added">
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/gb/xo/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/gb/xo/Map.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1695653478152</updated>
       <workItem from="1695653479777" duration="6600000" />
-      <workItem from="1695902269416" duration="4077000" />
+      <workItem from="1695902269416" duration="4545000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1695653614841</created>
@@ -127,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695911156663</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="map game logic added">
+      <created>1695912620307</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695912620307</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +149,7 @@
     <MESSAGE value="map render (3x3) updated" />
     <MESSAGE value="map mouseListener added" />
     <MESSAGE value="map mouseListener updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="map mouseListener updated" />
+    <MESSAGE value="map game logic added" />
+    <option name="LAST_COMMIT_MESSAGE" value="map game logic added" />
   </component>
 </project>
