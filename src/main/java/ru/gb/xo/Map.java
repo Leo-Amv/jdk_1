@@ -4,8 +4,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Random;
 
 public class Map extends JPanel {
+    private static final Random RANDOM = new Random();
+    private final int HUMAN_DOT = 1;
+    private final int AI_DOT = 2;
+    private final int EMPTY_DOT = 0;
+    private int fieldSizeY = 3;
+    private int fieldSizeX = 3;
+    private char[][] field;
+
     private int panelWidth;
     private int panelHeight;
     private int cellHeight;
@@ -52,5 +61,53 @@ public class Map extends JPanel {
             int x = w * cellWidth;
             g.drawLine(x,0,x,panelHeight);
         }
+    }
+
+    /**
+     * game logic
+     */
+
+    private void initMap(){
+        fieldSizeY = 3;
+        fieldSizeX = 3;
+        field = new char[fieldSizeY][fieldSizeX];
+        for (int i = 0; i < fieldSizeY; i++) {
+            for (int j = 0; j < fieldSizeX; j++) {
+                field[i][j] = EMPTY_DOT;
+            }
+        }
+    }
+
+    private boolean isValidCell(int x, int y) {
+        return x>= 0 && x < fieldSizeX && y >= 0 && y < fieldSizeY;
+    }
+
+    private boolean isEmptyCell(int x, int y){
+        return field[x][y] == EMPTY_DOT;
+    }
+
+    private void aiTurn(){
+        int x, y;
+        do{
+            x = RANDOM.nextInt(fieldSizeX);
+            y = RANDOM.nextInt(fieldSizeY);
+        } while (!isEmptyCell(x,y));
+        field[y][x] = AI_DOT;
+    }
+
+    private boolean checkWIn(char c){
+        /**
+         * to do win check
+         */
+        return false;
+    }
+
+    private boolean isMapFull(){
+        for (int i = 0; i < fieldSizeY; i++) {
+            for (int j = 0; j < fieldSizeX; j++) {
+                if (field[i][j] == EMPTY_DOT) return false;
+            }
+        }
+        return true;
     }
 }
