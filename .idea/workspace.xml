@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1dd0048-19cb-4b91-a9da-c57e80e7fc2b" name="Changes" comment="map render updated">
+    <list default="true" id="e1dd0048-19cb-4b91-a9da-c57e80e7fc2b" name="Changes" comment="map game logic updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/gb/xo/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/gb/xo/Map.java" afterDir="false" />
     </list>
@@ -62,7 +62,8 @@
       <option name="presentableId" value="Default" />
       <updated>1695653478152</updated>
       <workItem from="1695653479777" duration="6600000" />
-      <workItem from="1695902269416" duration="9435000" />
+      <workItem from="1695902269416" duration="10179000" />
+      <workItem from="1696262167256" duration="1796000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1695653614841</created>
@@ -148,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695914218864</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="map game logic updated">
+      <created>1695917883681</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1695917883681</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +175,7 @@
     <MESSAGE value="map game logic added" />
     <MESSAGE value="map human turn added" />
     <MESSAGE value="map render updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="map render updated" />
+    <MESSAGE value="map game logic updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="map game logic updated" />
   </component>
 </project>
