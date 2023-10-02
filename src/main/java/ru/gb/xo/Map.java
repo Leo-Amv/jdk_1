@@ -166,7 +166,37 @@ public class Map extends JPanel {
         return field[x][y] == EMPTY_DOT;
     }
 
+    private boolean turnAIWinCell(){
+        for (int i = 0; i < fieldSizeY; i++) {
+            for (int j = 0; j < fieldSizeX; j++) {
+                if (isEmptyCell(j,i)){
+                    field[i][j] = AI_DOT;
+                    if (checkWIn(AI_DOT)) return true;
+                    field[i][j] = EMPTY_DOT;
+                }
+            }
+        }
+        return false;
+    }
+    private boolean turnHumanWinCell(){
+        for (int i = 0; i < fieldSizeY; i++) {
+            for (int j = 0; j < fieldSizeX; j++) {
+                if (isEmptyCell(j,i)){
+                    field[i][j] = HUMAN_DOT;
+                    if (checkWIn(HUMAN_DOT)){
+                        field[i][j] = HUMAN_DOT;
+                        return true;
+                    }
+                    field[i][j] = EMPTY_DOT;
+                }
+            }
+        }
+        return false;
+    }
+
     private void aiTurn(){
+        if (turnAIWinCell()) return;
+        if (turnHumanWinCell()) return;
         int x, y;
         do{
             x = RANDOM.nextInt(fieldSizeX);
