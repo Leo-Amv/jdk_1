@@ -89,17 +89,17 @@ public class Map extends JPanel {
 
     private void render(Graphics g){
         if (!isInitialized) return;
-        panelWidth = getWidth();
-        panelHeight = getHeight();
-        cellHeight = panelHeight / 3;
-        cellWidth = panelWidth / 3;
+        panelWidth = this.getWidth();
+        panelHeight = this.getHeight();
+        cellHeight = panelHeight / this.fieldSizeX;
+        cellWidth = panelWidth / this.fieldSizeY;
 
         g.setColor(Color.BLACK);
-        for (int h = 0; h < 3; h++) {
+        for (int h = 0; h < this.fieldSizeX; h++) {
             int y = h * cellHeight;
             g.drawLine(0,y,panelWidth,y);
         }
-        for (int w = 0; w < 3; w++) {
+        for (int w = 0; w < this.fieldSizeY; w++) {
             int x = w * cellWidth;
             g.drawLine(x,0,x,panelHeight);
         }
