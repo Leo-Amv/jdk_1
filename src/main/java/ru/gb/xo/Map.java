@@ -74,7 +74,7 @@ public class Map extends JPanel {
     }
 
     void startNewGame(boolean mode, int fSzX, int fSzY, int wLen){
-        System.out.printf("Mode: %d;\nSize: x= %d, y= %d;\nWin Length: %d",mode,fSzX,fSzY,wLen);
+        System.out.printf("Mode: %b;\nSize: x= %d, y= %d;\nWin Length: %d",mode,fSzX,fSzY,wLen);
         initMap(fSzX,fSzY,wLen);
         isGameOver = false;
         isInitialized = true;
